@@ -1,0 +1,5 @@
+<div class="subtask">
+  <input type="checkbox" [checked]="subtask.completed" [disabled]="state" [checked]="state">
+  <button *ngIf="!state" (click)="deleteItemHandler()">X</button>
+  <label>{{ subtask.title }}</label>
+</div>

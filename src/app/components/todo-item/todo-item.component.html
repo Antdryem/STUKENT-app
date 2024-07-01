@@ -1,0 +1,19 @@
+
+<div *ngIf="!todo.completed && !state" class="todo-item">
+  <input type="checkbox" [checked]="todo.completed" (click)="changeState(idTask)">
+  <button (click)="deleteItem(idTask)">X</button>
+  <label>{{ todo.title }}</label>
+  <div class="subtask" *ngFor="let subtask of todo.subTodos; let i = index">
+      <app-subtask [idTask]="idTask" [subtask]="subtask" [state]="state"  [idSubtask]="i" [deleteItem]="deleteItem.bind(this)"></app-subtask>
+  </div>
+</div>
+<!-- (del)="deleteItem($event.idTask, $event.idSubtask)" -->
+
+<div *ngIf="todo.completed && state" class="todo-item">
+  <input type="checkbox" [checked]="todo.completed" (click)="changeState(idTask)">
+  <button (click)="deleteItem(idTask)">X</button>
+  <label>{{ todo.title }}</label>
+  <div class="subtask" *ngFor="let subtask of todo.subTodos; let i = index">
+      <app-subtask [idTask]="idTask" [subtask]="subtask" [state]="state"  [idSubtask]="i"></app-subtask>
+  </div>
+</div>

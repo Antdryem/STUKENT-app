@@ -1,20 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Stukent App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="todo-container">
+    <div class="todo-header">
+        <h2>TO-DOs</h2>
+    </div>
+    <button (click)="createElement()">New Element</button>
+    <app-todo-item (del)="deleteItem($event)" [change]="changeState.bind(this)"
+        *ngFor="let todo of dataList; let i = index"
+        [todo]="todo" [state]="true" [idTask]="i">
+    </app-todo-item>
+    <app-todo-item (del)="deleteItem($event)" [change]="changeState.bind(this)"
+        *ngFor="let todo of dataList; let i = index"
+        [todo]="todo" [state]="false" [idTask]="i">
+    </app-todo-item>
+</div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
 </ion-content>

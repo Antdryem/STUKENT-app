@@ -1,27 +1,21 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.todo-container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  width: 400px;
+  margin-bottom: 6rem;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.todo-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+.todo-header h2 {
+  background-color: #88c0d0;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 8px;
 }
